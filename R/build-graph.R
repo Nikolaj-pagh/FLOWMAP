@@ -430,7 +430,7 @@ AnnotateGraph <- function(output.graph, FLOWMAP.clusters) {
     # get medians for all parameters and counts for all clusters
     counts <- FLOWMAP.clusters$cluster.counts[[f]]$Counts
     anno$count <- counts
-    total.cell <- sum(counts)
+    total.cell <- sum(as.numeric(counts))
     anno$percent.total <- data.frame(percent.total = c(counts / total.cell))
     anno$medians  <- FLOWMAP.clusters$cluster.medians[[f]]
     # add time information column
@@ -465,7 +465,7 @@ AnnotateSpecialGraph <- function(output.graph, FLOWMAP.clusters,
     # get medians for all parameters and counts for all clusters
     counts <- FLOWMAP.clusters$cluster.counts[[f]]$Counts
     anno$count <- counts
-    total.cell <- sum(counts)
+    total.cell <- sum(as.numeric(counts))
     anno$percent.total <- data.frame(percent.total = c(counts / total.cell))
     anno$medians  <- FLOWMAP.clusters$cluster.medians[[f]]
     # add time information column
